@@ -1,0 +1,5 @@
+python-dotenv~=0.21.0
+pydantic~=1.10.4
+aiogram~=2.24
+dependency-injector
+undetected-chromedriver==3.1.6

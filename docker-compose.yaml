@@ -1,0 +1,16 @@
+version: "3.1"
+services:
+  bot:
+    container_name: link-checker-bot
+
+    build:
+      context: .
+      dockerfile: docker/python/Dockerfile
+
+    restart: always
+
+    env_file:
+      - .env
+
+    volumes:
+      - .:/usr/src/app
