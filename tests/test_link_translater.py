@@ -9,4 +9,4 @@ from app.internal.clients.link_checker import BaseClient
                                  ])
 def test_link_translater(link):
     cli=BaseClient()
-    assert '?' or '/' or ':' not in cli.translate_link(link)
+    assert '?' or '/' or ':' not in cli.generate_filename(link)

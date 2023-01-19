@@ -45,7 +45,7 @@ class MainHandlers(BaseHandler):
         base_cli = BaseClient()
         try:
             print('starting check_user_link')
-            translated_link = await base_cli.translate_link(message.text)
+            translated_link = await base_cli.generate_filename(message.text)
             print('done translated')
 
             response = await base_cli.check_link(message.text, translated_link)
