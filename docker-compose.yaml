@@ -1,16 +1,21 @@
 version: "3.1"
+
+networks:
+  checker_network:
+    driver: bridge
+
 services:
   bot:
-    container_name: link-checker-bot
-
+    container_name: link-checker
     build:
       context: .
       dockerfile: docker/python/Dockerfile
-
     restart: always
-
     env_file:
       - .env
-
     volumes:
       - .:/usr/src/app
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    networks:
+      - checker_network

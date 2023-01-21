@@ -2,4 +2,7 @@ python-dotenv~=0.21.0
 pydantic~=1.10.4
 aiogram~=2.24
 dependency-injector
-undetected-chromedriver==3.1.6
+undetected-chromedriver==3.2.1
+requests~=2.28.2
+xvfbwrapper~=0.2.9
+pytest~=7.2.1

@@ -1,3 +1,4 @@
+import logging
 from abc import abstractmethod
 
 import aiogram
@@ -12,7 +13,7 @@ __all__ = ["BaseHandler"]
 class BaseHandler:
     dispatcher: aiogram.Dispatcher
     bot: aiogram.Bot
-    logger = get_logger("BaseHandler")
+    logger: logging.Logger
 
     @inject
     def __init__(
@@ -22,6 +23,7 @@ class BaseHandler:
     ):
         self.dispatcher = dispatcher
         self.bot = bot
+        self.logger= get_logger("BaseHandler")
 
     @abstractmethod
     def register_methods(self):
@@ -29,5 +31,5 @@ class BaseHandler:
         raise NotImplementedError()
 
     @staticmethod
-    async def _normalize_message(message: str):
+    async def _normalize_message(message: str) -> str:
         return message.translate({ord(c): f"\\{c}" for c in ".!@#%^"})

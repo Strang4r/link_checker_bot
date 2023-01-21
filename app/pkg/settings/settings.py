@@ -2,6 +2,7 @@ from functools import lru_cache
 from pathlib import Path
 
 from dotenv import find_dotenv
+from pydantic import PositiveInt
 from pydantic.env_settings import BaseSettings
 
 
@@ -19,8 +20,10 @@ class Settings(_Settings):
     SCREENSHOTS_FOLDER: Path
 
     # Browser settings
-    WEBDRIVER_PATH: Path
-    BROWSER_EXEC_PATH: Path
+    WEBDRIVER_PATH: str
+    BROWSER_EXEC_PATH: str
+    DISPLAY_WIDTH: PositiveInt
+    DISPLAY_HEIGHT: PositiveInt
 
     # logs
     LOGGER_FILE_PATH: Path

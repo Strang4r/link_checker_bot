@@ -1,17 +1,9 @@
 __all__ = [
-    "EmptyResult",
-    "DriverError",
+    "InvalidLink",
+    "UnreachableLink"
 ]
 
 from app.pkg.models.base.exception import BaseBotException
-
-
-class EmptyResult(BaseBotException):
-    message = "Не найдено."
-
-
-class DriverError(BaseBotException):
-    message = "Внутренняя ошибка."
 
 
 class InvalidLink(BaseBotException):
